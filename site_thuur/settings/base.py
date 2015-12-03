@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'shirts_thuur',
+    'event_reports',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
