@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-shirtindexpage{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    <div class="intro">{{ page.intro|richtext }}</div>
+
+    {% if shirts %}
+        <ul>
+        {% for shirt in shirts %}
+            <li><a href="{% slugurl shirt.slug %}">{{ shirt.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

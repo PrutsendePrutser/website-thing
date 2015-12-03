@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load wagtailuserbar %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-shirtpage{% endblock %}
+
+{% wagtailuserbar %}
+
+{% block content %}
+    {% for ref_placement in page.ref_placements.all %}
+        <p>
+            <a href="{{ref_placement.ref.url }}">
+                {{ ref_placement.ref.text }}
+            </a>
+        </p>
+    {% endfor %}
+
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date }}</p>
+
+    {% if page.shirt_image %}
+        {% image page.shirt_image width-400 %}
+    {% endif %}
+
+    <div class="description">{{ page.description }}</div>
+
+    {{ page.story|richtext }}
+{% endblock %}
+
