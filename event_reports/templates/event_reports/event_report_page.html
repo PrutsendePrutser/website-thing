@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load wagtailuserbar %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-eventreportpage{% endblock %}
+
+{% wagtailuserbar %}
+
+{% block content %}
+    <h1>{{ page.event_name }}   {{ page.date }}</h1>
+
+    <h2>{{ page.author }}</h2>
+
+    {{ page.event_report }}
+
+{% endblock %}
