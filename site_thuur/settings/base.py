@@ -26,6 +26,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'home',
     'search',
+    'core',
     'shirts_thuur',
     'event_reports',
 
@@ -146,4 +147,3 @@ MEDIA_URL = '/media/'
 # Wagtail settings
 
 WAGTAIL_SITE_NAME = "site_thuur"
-WAGTAILIMAGES_IMAGE_MODEL = 'shirts_thuur.ShirtImage'

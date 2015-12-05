@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load wagtailuserbar %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-eventreportindexpage{% endblock %}
+
+{% wagtailuserbar %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    <p>{{ page.intro }}</p>
+
+    {% for page in self.child_pages %}
+        {% slugurl page.slug %}<br />
+    {% endfor %}
+
+{% endblock %}
